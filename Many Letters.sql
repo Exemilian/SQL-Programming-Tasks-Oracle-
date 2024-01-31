@@ -26,18 +26,16 @@ MODI AS (
                   END)
     )
 )
-SELECT NAME "?????????", 
-       '????????? ' ||  (CASE REGEXP_COUNT(LET, ',') 
-                            WHEN 3 THEN '???'
-                            WHEN 4 THEN '??????'
-                            WHEN 5 THEN '????'
-                            WHEN 6 THEN '?????'
-                            WHEN 7 THEN '????'
-                            WHEN 8 THEN '??????'
-                            WHEN 9 THEN '??????'
-                            ELSE TO_CHAR(REGEXP_COUNT(LET, ','))
-                         END) || ' ????' ||
-                         (CASE WHEN REGEXP_COUNT(LET, ',') > 4 THEN '' ELSE '?' END) ||
-                         ' (' || LTRIM(LET, ',') || ')' "?????????"
+SELECT NAME, 
+       (CASE REGEXP_COUNT(LET, ',') 
+            WHEN 3 THEN 'three'
+            WHEN 4 THEN 'four'
+            WHEN 5 THEN 'five'
+            WHEN 6 THEN 'six'
+            WHEN 7 THEN 'seven'
+            WHEN 8 THEN 'eight'
+            WHEN 9 THEN 'nine'
+            ELSE TO_CHAR(REGEXP_COUNT(LET, ','))
+        END) || ' letters' || ' (' || LTRIM(LET, ',') || ')' Let
 FROM MODI
 WHERE REGEXP_COUNT(LET, ',') >= 3;
