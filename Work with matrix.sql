@@ -1,7 +1,7 @@
 --Condition
 --There is a table with columns Number, Line. Column data type Number -
 --Integer, String column data type is Varchar2(10). First column
---contains the serial number of the record, the String column – character strings,
+--contains the serial number of the record, the String column â€“ character strings,
 --consisting of 0 and 1. The total number of digits in all lines is the same
 --and equals 5. Write a request, which will print the numbers of the maximum
 --number of rows and column positions Row forming a square a matrix consisting only of ones.
@@ -43,7 +43,7 @@ SMM AS (
     FROM MODI
     WHERE M1 + M2 + M3 + M4 + M5 = LV
 )
-SELECT CB "??????", RTRIM(DECODE(M1, 1, '1,', '') || DECODE(M2, 1, '2,', '') || 
-       DECODE(M3, 1, '3,', '') || DECODE(M4, 1, '4,', '') || DECODE(M5, 1, '5,', ''), ',') "???????"
+SELECT CB Combination, RTRIM(DECODE(M1, 1, '1,', '') || DECODE(M2, 1, '2,', '') || 
+       DECODE(M3, 1, '3,', '') || DECODE(M4, 1, '4,', '') || DECODE(M5, 1, '5,', ''), ',') Mat
 FROM SMM
 WHERE LV = (SELECT MAX(LV) FROM SMM);
