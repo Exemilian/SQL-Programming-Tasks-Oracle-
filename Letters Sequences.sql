@@ -19,15 +19,15 @@ SPL AS (
 FILT AS (
     SELECT NM, POS
     FROM SPL
-    WHERE NM <= 33
+    WHERE NM <= 26
 ),
 COMB AS (
-    SELECT REPLACE(SYS_CONNECT_BY_PATH(SUBSTR('?????????????????????????????????', NM, 1), ' '), ' ') CB, POS + LENGTH(NM) - 1 LST
+    SELECT REPLACE(SYS_CONNECT_BY_PATH(SUBSTR('abcdefghijklmnopqrstuvwxyz', NM, 1), ' '), ' ') CB, POS + LENGTH(NM) - 1 LST
     FROM FILT
     WHERE CONNECT_BY_ISLEAF = 1 
     START WITH POS = 1
     CONNECT BY PRIOR POS + LENGTH(PRIOR NM) - 1 = POS - 1
 )
-SELECT CB "?????"
+SELECT CB Combination
 FROM COMB, SRC
 WHERE LST = LENGTH(STR);
