@@ -12,7 +12,7 @@ WITH SRC AS (
     SELECT '0|0|1.45|2|1|2|10|22|34|15|0|-105|66|73' STR 
     FROM DUAL
 )
-SELECT RTRIM(REVSTR, '|') "???????? ??????"
+SELECT RTRIM(REVSTR, '|') "Reverse string"
 FROM SRC
 MODEL
 DIMENSION BY (1 AS RN)
