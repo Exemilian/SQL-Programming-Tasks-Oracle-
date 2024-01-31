@@ -60,7 +60,7 @@ PREP AS (
                 FROM MODI MM 
                 WHERE M.THING = MM.THING AND M.DIS = MM.DIS AND M.NDAT = MM.NDAT)
 )
-SELECT THING "???????? ??????", LISTAGG(DATS, ', ') WITHIN GROUP(ORDER BY CNT) "???? ??????", 
-       DIS "??????, %"
+SELECT THING, LISTAGG(DATS, ', ') WITHIN GROUP(ORDER BY CNT) DATE, 
+       DIS "DIS, %"
 FROM PREP
 GROUP BY RN, THING, DIS;
