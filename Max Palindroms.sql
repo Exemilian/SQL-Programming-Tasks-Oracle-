@@ -4,11 +4,11 @@
 --the longest expressions that are a palindrome.
 
 WITH SRC AS(
-    SELECT '????????'TEXT FROM DUAL
+    SELECT 'Crocorc'TEXT FROM DUAL
     UNION ALL
-    SELECT '???????'TEXT FROM DUAL
+    SELECT 'PoloPoro'TEXT FROM DUAL
     UNION ALL
-    SELECT '??????'TEXT FROM DUAL
+    SELECT 'Chair'TEXT FROM DUAL
 ),
 NUMR AS (
     SELECT ROWNUM RN, TEXT
