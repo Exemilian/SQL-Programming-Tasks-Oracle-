@@ -14,8 +14,8 @@ RNUMB AS (
     SELECT ROWNUM RN, NB, TF
     FROM SRC
 )
-SELECT (CASE CNT WHEN 1 THEN NB ELSE ' ' END) "?????",
-       NVL(TEL, ' ') "???????"
+SELECT (CASE CNT WHEN 1 THEN NB ELSE ' ' END) Number,
+       NVL(TEL, ' ') Telephone
 FROM RNUMB
 MODEL
 PARTITION BY (RN)
