@@ -1,5 +1,5 @@
 --Condition
---A table with columns Number – Number and Amount – Number is specified.
+--A table with columns Number â€“ Number and Amount â€“ Number is specified.
 --A positive value in the second column indicates the amount that came to the account,
 --and a negative value indicates an adjustment (reduction) of previous receipts. 
 --You need to write a request that will determine the amounts taking into account adjustments.
@@ -52,7 +52,7 @@ MODI AS (
                         END)
     )
 )
-SELECT "?????", "?????", "????" 
-FROM (SELECT RN, N "?????", S "?????", RESULTS "????"
+SELECT N, S SUMM, RESULTS 
+FROM (SELECT RN, N, S, RESULTS
       FROM MODI
       ORDER BY 1 DESC);
