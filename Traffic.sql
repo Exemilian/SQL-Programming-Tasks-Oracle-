@@ -62,7 +62,7 @@ PREP AS (
             END) NTRAF
     FROM MODI MD
 )
-SELECT DAT "????", SUM(NTRAF) "????????? ??????"
+SELECT DAT Date, SUM(NTRAF) "Summay traffic"
 FROM PREP
 GROUP BY DAT
 ORDER BY DAT;
